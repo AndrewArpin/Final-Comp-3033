@@ -1,9 +1,12 @@
 const express = require('express');
 const app = express();
 const port = 3000;
+var path = __dirname + '/views/'; 
+
+app.set('view engine', 'pug')
 
 app.get('/', (req, res) => {
-    res.send('get');
+    res.render(path + 'index')
 });
 
 app.post('/', (req, res) => {
