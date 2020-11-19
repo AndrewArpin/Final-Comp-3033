@@ -6,12 +6,10 @@ var path = __dirname + '/views/';
 app.set('view engine', 'pug')
 
 app.get('/', (req, res) => {
-<<<<<<< HEAD
     res.send('get');
    // console.log(`Trump API is running at port`);
-=======
+
     res.render(path + 'index')
->>>>>>> f5f320c9d3e44d76a17a2690c992f92724f7c54f
 });
 
 app.post('/', (req, res) => {
