@@ -6,14 +6,14 @@ var path = __dirname + '/views/';
 app.set('view engine', 'pug')
 
 app.get('/', (req, res) => {
-    res.send('get');
-   // console.log(`Trump API is running at port`);
 
-    res.render(path + 'index')
+    res.render(path + 'index');
+    
 });
 
 app.post('/', (req, res) => {
-    res.send('post')
+    res.send('post');
+    
 });
 
 app.listen(port, () => {
