@@ -4,6 +4,7 @@ const port = 3000;
 
 app.get('/', (req, res) => {
     res.send('get');
+   // console.log(`Trump API is running at port`);
 });
 
 app.post('/', (req, res) => {
@@ -11,5 +12,5 @@ app.post('/', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Trump API is running at port http://localhost:${port}`)
+    console.log(`Trump API is running at port http://localhost:${port}`);
 });
