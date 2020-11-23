@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js"
+    "start": "nodemon --exec babel-node index.js"
   },
   "repository": {
     "type": "git",
@@ -14,10 +14,23 @@
   "author": "Andrew Arpin",
   "license": "ISC",
   "dependencies": {
+    "apollo-server": "^2.19.0",
+    "apollo-server-core": "^2.19.0",
+    "apollo-server-express": "^2.19.0",
+    "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
-    "cors": "^2.8.5",
     "express": "^4.17.1",
-    "mongoose": "^5.10.13",
+    "express-graphql": "^0.11.0",
+    "graphql": "^15.4.0",
+    "graphql-yoga": "^1.18.3",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.10.15",
     "pug": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.7",
+    "@babel/core": "^7.12.7",
+    "@babel/node": "^7.12.6",
+    "@babel/preset-env": "^7.12.7"
   }
 }
