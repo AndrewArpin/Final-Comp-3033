@@ -4,4 +4,5 @@ export const resolvers = {
     Query:{
         donaldTweets: () => Tweet.find()
     }
+
 }
