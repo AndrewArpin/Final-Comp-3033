@@ -1,9 +1,15 @@
 nav.navbar.navbar-expand-lg.navbar-light.bg-light
-  a.navbar-brand(href='#') Donald Trump Tweets  
+  a.navbar-brand(href='/') Donald Trump Tweets  
   button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
     span.navbar-toggler-icon
   .collapse.navbar-collapse(id='navBar')
-    ul.navbar-nav.mr-auto
+    ul.navbar-nav.mr-auto 
+    if user               
       li.nav-item
-        a.nav-link(href='/graphql') Tweets
- 
+        a.nav-link(href='/graphql') Tweets         
+        a.nav-link(href='/logout') Logout  
+    else   
+        a.nav-link(href='/google') Login/Register 
+    
+      
+        
