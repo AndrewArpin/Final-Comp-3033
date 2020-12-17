@@ -2,11 +2,11 @@ const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20');
 const keys = require('./keys');
 const User = require('../models/users');
-
+// new user
 passport.serializeUser((user, done) => {
     done(null, user.id);
 });
-
+//existing user
 passport.deserializeUser((id, done) => {
     User.findById(id).then((user) => {
         done(null, user.id);
@@ -19,7 +19,7 @@ passport.use(
         clientID: keys.google.clientID,
         clientSecret: keys.google.clientSecret
 
-    }, (accessToken, refreshToken, profile, done) => {
+    }, (profile, done) => {
         //check for existing user 
         User.findOne({googleid: profile.id}).then((existingUser) => {
             if(existingUser){
