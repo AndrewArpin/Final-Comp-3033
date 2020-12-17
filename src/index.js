@@ -23,11 +23,12 @@ const Server = async () => {
   app.use(express.static('views'));
   app.set('view engine', 'pug');
   
-  //sets cookie timer 
+  //sets cookie
   app.use(cookieSession({
     maxAge: 24 * 60 * 60 * 1000,
     keys: [keys.session.cookieKey]
   }));
+
 
   app.use(passport.initialize());
   app.use(passport.session());
@@ -61,6 +62,6 @@ const Server = async () => {
   
 
 }
-
+// start server and set up routes
 Server();
 

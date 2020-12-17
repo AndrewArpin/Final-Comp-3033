@@ -19,7 +19,7 @@ passport.use(
         clientID: keys.google.clientID,
         clientSecret: keys.google.clientSecret
 
-    }, (profile, done) => {
+    }, (accessToken, refreshToken, profile, done) => {
         //check for existing user 
         User.findOne({googleid: profile.id}).then((existingUser) => {
             if(existingUser){
