@@ -1,4 +1,6 @@
 import mongoose from 'mongoose';
+
+// tweet model
 export const Tweet = mongoose.model("Tweet", { 
     text: String, 
     isRetweet: String, 

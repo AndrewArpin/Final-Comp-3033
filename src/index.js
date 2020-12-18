@@ -9,6 +9,7 @@ const keys = require('./config/keys')
 var path = '../views/';
 const cookieSession = require('cookie-session');
 
+//setup server 
 const Server = async () => {
   const app = express();
   const server = new ApolloServer({
@@ -16,11 +17,15 @@ const Server = async () => {
     resolvers
   })
 
+  //starts gql server (i think)
   server.applyMiddleware({ app });
 
+  //connect to db
   await mongoose.connect("mongodb+srv://andrewarpin:Waxer75123@cluster0.2njwl.mongodb.net/Donald?authSource=admin&replicaSet=Cluster0-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true", {useNewUrlParser: true})
   
+ //allows for pictures to be rendered 
   app.use(express.static('views'));
+   //sets view engine
   app.set('view engine', 'pug');
   
   //sets cookie
